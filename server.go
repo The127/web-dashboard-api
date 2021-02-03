@@ -130,7 +130,7 @@ func handleRequests() {
 	router.HandleFunc("/itemgroups/{groupid}/items", returnAllGroupItems)
 	router.HandleFunc("/items/{itemid}/subitems", returnAllSubItems)
 
-	log.Fatal(http.ListenAndServe(":10000", nil))
+	log.Fatal(http.ListenAndServe(":10000", router))
 }
 
 func oiCunt(writer http.ResponseWriter, request *http.Request) {
