@@ -238,6 +238,9 @@ func oiCunt(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllSubItems(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+
 	vars := mux.Vars(request)
 	itemId := vars["itemid"]
 
@@ -253,6 +256,9 @@ func returnAllSubItems(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllGroupItems(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+
 	vars := mux.Vars(request)
 	groupId := vars["groupid"]
 
@@ -268,5 +274,8 @@ func returnAllGroupItems(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllItemGroups(writer http.ResponseWriter, request *http.Request) {
+	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+
 	json.NewEncoder(writer).Encode(ItemGroups)
 }
