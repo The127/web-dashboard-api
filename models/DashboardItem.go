@@ -7,5 +7,5 @@ type DashboardItem struct {
 	IconUrl     string `json:"IconUrl"`
 	Title       string `json:"Title"`
 	Description string `json:"Description"`
-	WebsiteUrl  string `json:"WebisteUrl"`
+	WebsiteUrl  string `json:"WebsiteUrl"`
 }
