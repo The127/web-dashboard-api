@@ -238,8 +238,11 @@ func oiCunt(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllSubItems(writer http.ResponseWriter, request *http.Request) {
-	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
-	writer.Header().Set("Access-Control-Allow-Origin", "localhost:8080")
+	writer.Header().Set("Content-Type", "application/json; charset=utf-8")
+
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+	writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	writer.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 
 	vars := mux.Vars(request)
 	itemId := vars["itemid"]
@@ -256,8 +259,11 @@ func returnAllSubItems(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllGroupItems(writer http.ResponseWriter, request *http.Request) {
-	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
-	writer.Header().Set("Access-Control-Allow-Origin", "localhost:8080")
+	writer.Header().Set("Content-Type", "application/json; charset=utf-8")
+
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+	writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	writer.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 
 	vars := mux.Vars(request)
 	groupId := vars["groupid"]
@@ -274,8 +280,11 @@ func returnAllGroupItems(writer http.ResponseWriter, request *http.Request) {
 }
 
 func returnAllItemGroups(writer http.ResponseWriter, request *http.Request) {
-	writer.Header().Set("Content-Type", "text/html; charset=utf-8")
-	writer.Header().Set("Access-Control-Allow-Origin", "localhost:8080")
+	writer.Header().Set("Content-Type", "application/json; charset=utf-8")
+
+	writer.Header().Set("Access-Control-Allow-Origin", "*")
+	writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+	writer.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
 
 	json.NewEncoder(writer).Encode(ItemGroups)
 }
